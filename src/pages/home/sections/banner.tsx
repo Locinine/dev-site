@@ -1,6 +1,8 @@
 import { BannerLayer, ParallaxBanner } from "react-scroll-parallax";
 import { Button } from "antd";
 
+import painterPNG from "/public/painter.png?raw";
+
 import "./styles/banner.scss";
 
 const stars: BannerLayer = {
@@ -34,7 +36,7 @@ const moon: BannerLayer = {
 };
 
 const painter: BannerLayer = {
-  image: "/public/painter.png",
+  image: painterPNG,
   translateY: [0, 10],
   scale: [1, 1.2, "easeOutCubic"],
   shouldAlwaysCompleteAnimation: true,
