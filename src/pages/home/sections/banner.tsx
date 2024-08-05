@@ -4,7 +4,7 @@ import { Button } from "antd";
 import "./styles/banner.scss";
 
 const stars: BannerLayer = {
-  image: "../../../../public/sky.jpg",
+  image: "/public/sky.jpg",
   translateY: [0, 20],
   opacity: [1, 0.3],
   scale: [1.05, 1, "easeOutCubic"],
@@ -19,7 +19,7 @@ const stars: BannerLayer = {
 };
 
 const backgroundMountains: BannerLayer = {
-  image: "../../../../public/background_mountains.png",
+  image: "/public/background_mountains.png",
   translateY: [0, 30],
   scale: [1, 1.05, "easeOutCubic"],
   shouldAlwaysCompleteAnimation: true,
@@ -34,14 +34,14 @@ const moon: BannerLayer = {
 };
 
 const painter: BannerLayer = {
-  image: "../../../../public/painter.png",
+  image: "/public/painter.png",
   translateY: [0, 10],
   scale: [1, 1.2, "easeOutCubic"],
   shouldAlwaysCompleteAnimation: true,
 };
 
 const foregroundMountains: BannerLayer = {
-  image: "../../../../public/foreground_mountains.png",
+  image: "/public/foreground_mountains.png",
   translateY: [0, 15],
   scale: [1, 1.1, "easeOutCubic"],
   shouldAlwaysCompleteAnimation: true,
