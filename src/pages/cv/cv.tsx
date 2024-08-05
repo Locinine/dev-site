@@ -30,17 +30,17 @@ interface CVProps {
 
 const CV: React.FC<CVProps> = ({ windowWidth, cvRef }) => {
   const expierenceSection = experience.map(
-    ({ dates, role, company_name, desc, tech }, i) => (
+    ({ dates, role, company_name, description, skills }, i) => (
       <div className={i !== 0 && role ? "border-t-1 pt-3" : ""}>
         <h4>{role}</h4>
         <h5 className="company_name">{company_name}</h5>
         <p>{dates}</p>
-        {tech && (
+        {skills && (
           <p>
-            Key Technologies: <br /> {tech}
+            Key Technologies: <br /> {skills}
           </p>
         )}
-        <p className="test">{desc}</p>
+        <p className="test">{description}</p>
       </div>
     )
   );

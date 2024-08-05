@@ -2,22 +2,28 @@
   width: 100%;
   position: fixed;
   z-index: 2;
-}
+  .menubtn {
+    z-index: 3;
+  }
 
-.menubtn {
-  z-index: 3;
-}
-
-.mobileNav {
-  display: none;
-}
-.desktopNav {
-  width: 100%;
-  padding: 40px 40px;
-}
-
-@media (max-width: 750px) {
+  .mobileNav {
+    display: none;
+  }
   .desktopNav {
+    width: 100%;
+    padding: 40px 40px;
+  }
+
+  .download_cv {
+    position: fixed;
+    right: 20px;
+    top: 20px;
+  }
+}
+
+@media (max-width: 575px) {
+  .desktopNav,
+  .download_cv {
     display: none;
   }
   .mobileNav {

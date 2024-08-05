@@ -1,10 +1,16 @@
 import { BannerLayer, ParallaxBanner } from "react-scroll-parallax";
 import { Button } from "antd";
 
+import skyJPG from "/public/sky.jpg";
+import backgroundMountainsPNG from "/public/background_mountains.png";
+import painterJPG from "/public/painter.png";
+import foregroundMountainsPNG from "/public/foreground_mountains.png";
+
 import "./styles/banner.scss";
+import Link from "antd/es/typography/Link";
 
 const stars: BannerLayer = {
-  image: "../../../../public/sky.jpg",
+  image: skyJPG,
   translateY: [0, 20],
   opacity: [1, 0.3],
   scale: [1.05, 1, "easeOutCubic"],
@@ -19,7 +25,7 @@ const stars: BannerLayer = {
 };
 
 const backgroundMountains: BannerLayer = {
-  image: "../../../../public/background_mountains.png",
+  image: backgroundMountainsPNG,
   translateY: [0, 30],
   scale: [1, 1.05, "easeOutCubic"],
   shouldAlwaysCompleteAnimation: true,
@@ -34,14 +40,14 @@ const moon: BannerLayer = {
 };
 
 const painter: BannerLayer = {
-  image: "../../../../public/painter.png",
+  image: painterJPG,
   translateY: [0, 10],
   scale: [1, 1.2, "easeOutCubic"],
   shouldAlwaysCompleteAnimation: true,
 };
 
 const foregroundMountains: BannerLayer = {
-  image: "../../../../public/foreground_mountains.png",
+  image: foregroundMountainsPNG,
   translateY: [0, 15],
   scale: [1, 1.1, "easeOutCubic"],
   shouldAlwaysCompleteAnimation: true,
@@ -60,7 +66,11 @@ const siteTitle: BannerLayer = {
     <div className="siteTitle inset">
       <h1>Farrah Lord-Newcombe</h1>
       <h2 className="subtitle">Explore the possibilities</h2>
-      <Button type="default"> Get in touch</Button>
+      <Button type="default">
+        <Link href="#contact" className="contact_button">
+          Get in touch
+        </Link>
+      </Button>
     </div>
   ),
 };

@@ -15,7 +15,11 @@ const Home = () => {
       <Menu />
       <HeroBanner />
       <div className="gradient_out">
-        <Col span={16} offset={7} className="sections">
+        <Col
+          xs={{ span: 20, offset: 2 }}
+          sm={{ span: 16, offset: 7 }}
+          className="sections"
+        >
           <Row gutter={[16, 16]}>
             <About />
           </Row>

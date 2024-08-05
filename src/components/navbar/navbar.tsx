@@ -10,7 +10,10 @@ import styles from "./navbar.module.scss";
 
 // const { Title } = Typography;
 
-type MenuItem = Required<MenuProps>["items"][number] & { url: string };
+type MenuItem = Required<MenuProps>["items"][number] & {
+  url: string;
+  label: string;
+};
 
 const menuItem: Array<MenuItem> = [
   {
@@ -63,11 +66,9 @@ const Navigation: React.FC<NavigationProps> = ({ title }) => {
         open={navOpen}
       >
         <Flex style={{ width: "250px" }} vertical gap="middle" align="flex-end">
-          {menuItem.map(({ key, label, icon, url }) => (
+          {menuItem.map(({ key, label, url }) => (
             <Link href={url} key={key}>
-              <Button icon={icon} type="link">
-                {label}
-              </Button>
+              <Button type="link">{label}</Button>
             </Link>
           ))}
           <Button
@@ -102,26 +103,34 @@ const Navigation: React.FC<NavigationProps> = ({ title }) => {
   );
 
   const DesktopNav: JSX.Element = (
-    <Flex justify="flex-end" align="center" className={styles.desktopNav}>
-      {/* <Title level={4}>{title}</Title> */}
-      <Button
-        href={CVPDF}
-        download="CV:Farrah-Lord-Newcombe"
-        target="_blank"
-        rel="noreferrer"
-        type="default"
-        icon={<FaDownload />}
-        size="large"
-      >
-        CV
-      </Button>
-    </Flex>
+    // <Flex justify="flex-end" align="center" className={styles.desktopNav}>
+    // <Title level={4}>{title}</Title>
+    <Button
+      href={CVPDF}
+      download="CV:Farrah-Lord-Newcombe"
+      target="_blank"
+      rel="noreferrer"
+      type="default"
+      icon={<FaDownload />}
+      size="large"
+      className={styles.download_cv}
+    >
+      CV
+    </Button>
+    // </Flex>
   );
 
   return (
     <Flex className={styles.menu}>
       {MobileNav}
       {DesktopNav}
+      {/* <FloatButton
+        href={CVPDF}
+        target="_blank"
+        type="primary"
+        shape="square"
+        icon={<FaDownload />}
+      /> */}
     </Flex>
   );
 };

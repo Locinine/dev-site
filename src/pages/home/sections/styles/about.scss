@@ -2,5 +2,12 @@
   width: 100%;
   position: relative;
   background: #22052c;
-  padding: 30px 30px 0 30px;
+  padding: 30px 0 0;
+}
+
+@media (min-width: 576px) {
+  .about_container {
+    width: 90%;
+    padding: 30px 30px 0 30px;
+  }
 }

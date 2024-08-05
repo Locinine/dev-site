@@ -125,15 +125,22 @@ $shadows-big: multiple-box-shadow(50);
   top: 20%;
   z-index: 100;
 
+  text-decoration: none !important;
   color: rgb(207, 202, 195);
   text-align: center;
   letter-spacing: 7px;
   .subtitle {
     font-variant: small-caps;
   }
+  .contact_button {
+    color: white;
+  }
+  .contact_button:hover {
+    color: black;
+  }
 }
 
-@media (min-width: 768px) {
+@media (min-width: 576px) {
   .siteTitle {
     right: 8%;
     top: 30%;

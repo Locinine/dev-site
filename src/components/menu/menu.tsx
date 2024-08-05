@@ -10,6 +10,7 @@ const Menu: React.FC = () => (
   <Col className="anchor_container">
     <Anchor
       affix={false}
+      // targetOffset={window.screen.height / 2}
       items={[
         {
           key: "about",
@@ -43,7 +44,7 @@ const Menu: React.FC = () => (
         target="_blank"
         size="large"
       />
-      {/* <Button type="default" icon={<FaCodepen />} size="large" /> */}
+      <Button type="default" icon={<FaCodepen />} size="large" />
     </Flex>
   </Col>
 );

@@ -48,3 +48,16 @@ export const cvOverides = {
     },
   },
 };
+
+export const formTheme = {
+  components: {
+    Select: {
+      colorText: "#000000",
+      colorTextPlaceholder: "#742759",
+    },
+    Input: {
+      colorText: "#000000",
+      colorTextPlaceholder: "#742759",
+    },
+  },
+};

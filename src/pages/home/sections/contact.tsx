@@ -1,7 +1,17 @@
-import { Col, Row, Button, Select, Form, Input, Typography } from "antd";
+import {
+  Col,
+  Row,
+  Button,
+  Select,
+  Form,
+  Input,
+  Typography,
+  ConfigProvider,
+} from "antd";
 import type { FormProps } from "antd";
 
 import "./styles/contact.scss";
+import { formTheme } from "../../../theme";
 
 const { TextArea } = Input;
 const { Title } = Typography;
@@ -34,82 +44,82 @@ const Contact = () => {
       <Row gutter={[16, 16]}>
         <Col span={24}>
           <Title level={1}>Get in touch!</Title>
-          <Form
-            layout="vertical"
-            name="contact"
-            labelCol={{ span: 4 }}
-            wrapperCol={{ span: 20 }}
-            onFinish={onSubmit}
-            onFinishFailed={onSubmitFailed}
-            autoComplete="off"
-          >
-            <Form.Item<FieldType>
-              label="Enquiry Type"
-              name="type"
-              rules={[
-                { required: true, message: "Please select an enquiry type" },
-              ]}
+          <ConfigProvider theme={formTheme}>
+            <Form
+              layout="vertical"
+              name="contact"
+              labelCol={{ span: 4 }}
+              wrapperCol={{ span: 20 }}
+              onFinish={onSubmit}
+              onFinishFailed={onSubmitFailed}
+              autoComplete="off"
             >
-              <Select
-                placeholder="What is your message about"
-                //   optionFilterProp="label"
-                onChange={onEnquiryChange}
-                options={[
+              <Form.Item<FieldType>
+                label={<Title level={5}>Enquiry Type</Title>}
+                name="type"
+                rules={[
+                  { required: true, message: "Please select an enquiry type" },
+                ]}
+              >
+                <Select
+                  placeholder="What is your message about"
+                  onChange={onEnquiryChange}
+                  options={[
+                    {
+                      value: "general",
+                      label: "General Enquiry",
+                    },
+                    {
+                      value: "collaboration",
+                      label: "Collaboration",
+                    },
+                    {
+                      value: "consultation",
+                      label: "Consultation",
+                    },
+                  ]}
+                />
+              </Form.Item>
+              <Form.Item<FieldType>
+                label="Name"
+                name="name"
+                rules={[
+                  { required: true, message: "Please provide your name" },
+                ]}
+              >
+                <Input />
+              </Form.Item>
+              <Form.Item
+                label="Email"
+                name="email"
+                rules={[
                   {
-                    value: "general",
-                    label: "General Enquiry",
+                    type: "email",
+                    message: "Invalid email address",
                   },
                   {
-                    value: "collaboration",
-                    label: "Collaboration",
-                  },
-                  {
-                    value: "consultation",
-                    label: "Consultation",
+                    required: true,
+                    message: "Please provide your email",
                   },
                 ]}
-              />
-            </Form.Item>
-
-            <Form.Item<FieldType>
-              label="Name"
-              name="name"
-              rules={[
-                { required: true, message: "Please input your username!" },
-              ]}
-            >
-              <Input />
-            </Form.Item>
-
-            <Form.Item<FieldType>
-              label="Email"
-              name="email"
-              rules={[
-                { required: true, message: "Please input your password!" },
-              ]}
-            >
-              <Input />
-            </Form.Item>
-
-            <Form.Item<FieldType>
-              label="Message"
-              name="message"
-              valuePropName="message"
-              wrapperCol={{ offset: 0, span: 20 }}
-            >
-              <TextArea
-                rows={6}
-                placeholder="What's on your mind?"
-                maxLength={6}
-              />
-            </Form.Item>
-
-            <Form.Item wrapperCol={{ offset: 0, span: 20 }}>
-              <Button type="default" htmlType="submit">
-                Submit
-              </Button>
-            </Form.Item>
-          </Form>
+              >
+                <Input />
+              </Form.Item>
+              <Form.Item<FieldType>
+                label="Message"
+                name="message"
+                valuePropName="message"
+                wrapperCol={{ offset: 0, span: 20 }}
+              >
+                <TextArea rows={6} placeholder="What's on your mind?" />
+              </Form.Item>
+              <Form.Item wrapperCol={{ offset: 0, span: 20 }}>
+                <Button type="default" htmlType="submit">
+                  Submit
+                </Button>
+              </Form.Item>
+            </Form>
+          </ConfigProvider>
         </Col>
       </Row>
     </div>

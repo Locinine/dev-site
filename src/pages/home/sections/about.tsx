@@ -1,4 +1,4 @@
-import { Col, Divider, Typography } from "antd";
+import { Typography } from "antd";
 
 import "./styles/about.scss";
 
@@ -9,14 +9,24 @@ const About = () => {
     <div id="about" className="about_container">
       <p>
         <Text>
-          I'm a passionate and experienced software engineer dedicated to
-          creating innovative and efficient solutions. With 7 years of
-          experience in the industry, I have honed my skills in various
-          programming languages, frameworks, and development methodologies,
-          ensuring I stay at the forefront of technological advancements.
+          I'm a
+          <b>
+            <em> passionate </em>
+          </b>
+          and
+          <b>
+            <em> experienced </em>
+          </b>
+          software engineer
+          <b>
+            <em> dedicated to creating innovative </em>
+          </b>
+          and efficient solutions. With 7 years of experience in the industry, I
+          have honed my skills in various programming languages, frameworks, and
+          development methodologies, ensuring I stay at the forefront of
+          technological advancements.
         </Text>
       </p>
-      Í
       <p>
         <Text>
           Throughout my career, I have had the privilege of working with diverse
@@ -44,7 +54,6 @@ const About = () => {
           to get in touch. Let's create something amazing together!
         </Text>
       </p>
-      <Divider style={{ marginTop: "60px" }} />
     </div>
   );
 };

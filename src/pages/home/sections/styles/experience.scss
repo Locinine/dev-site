@@ -1,6 +1,29 @@
 .expierence_container {
   width: 90%;
-  position: relative;
-  background: #22052c;
   padding: 30px 0 60px 0;
+}
+
+@media (max-width: 575px) {
+  .expierence_container {
+    width: 100%;
+    position: relative;
+    background: #22052c;
+    padding: 30px 0 60px 0;
+
+    .panel_title {
+      margin-top: 20px;
+
+      .dates_company_name {
+        font-size: 11px;
+      }
+      .role {
+        font-size: 12px;
+        margin-bottom: 20px;
+      }
+    }
+
+    .skill_tag {
+      border-radius: 10px;
+    }
+  }
 }

@@ -17,6 +17,7 @@ interface AccordionProps {
 }
 
 const Accordion: React.FC<AccordionProps> = ({ items, openPanel }) => {
+  console.log("openPanel: ", openPanel);
   const [activePanel, setActivePanel] = useState<number | undefined>(openPanel);
 
   const sections = items.map(({ label, content, footer }, index) => (
@@ -28,22 +29,16 @@ const Accordion: React.FC<AccordionProps> = ({ items, openPanel }) => {
         }
       >
         <div
-          className={`arrow-wrapper ${
-            index === activePanel ? "active" : undefined
-          }`}
+          className={`arrow-wrapper${index === activePanel ? " active" : ""}`}
         >
           <SlArrowRight />
         </div>
         <span className="title-text">{label}</span>
       </div>
-      <div
-        className={`${
-          index === activePanel ? "content-open" : undefined
-        } content`}
-      >
+      <div className={`content${index === activePanel ? " content-open" : ""}`}>
         <div
           className={`${
-            index === activePanel ? "content-text-open" : undefined
+            index === activePanel ? "content-text-open" : ""
           } content-text`}
         >
           {content}
