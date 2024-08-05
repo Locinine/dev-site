@@ -11,24 +11,26 @@ $shadows-small: multiple-box-shadow(350);
 $shadows-medium: multiple-box-shadow(100);
 $shadows-big: multiple-box-shadow(50);
 
-.parallax {
-  height: 80vh;
+.banner {
+  height: 100vh;
   width: 100vw;
 }
 
-.parallax-layer {
+.inset {
   position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
+  inset: 0;
+}
+
+.gradient {
+  background: linear-gradient(
+    0deg,
+    rgba(34, 5, 44, 1) 0%,
+    rgba(34, 5, 44, 0.4696079115239846) 30%,
+    rgba(34, 5, 44, 0) 100%
+  );
 }
 
 .starsContainer {
-  background-size: cover !important;
-  background-position: center;
-  background-image: url("../../../assets/home/sky.jpg");
-
   .stars {
     width: 1px;
     height: 1px;
@@ -102,8 +104,9 @@ $shadows-big: multiple-box-shadow(50);
   left: calc(50% - 10em);
   top: 20%;
   filter: drop-shadow(0px 0px 125px #a5a5a5);
-  // box-shadow: 0 0 5px 0.6em rgba(255, 255, 255, 0.07),
-  // 0 0 7px 1.2em rgba(255, 255, 255, 0.05), 0 0 8px 1.8em rgba(255, 255, 255, 0.02);
+  box-shadow: 0 0 5px 0.6em rgba(255, 255, 255, 0.07),
+    0 0 7px 1.2em rgba(255, 255, 255, 0.05),
+    0 0 8px 1.8em rgba(255, 255, 255, 0.02);
 
   &:after {
     position: absolute;
@@ -118,50 +121,22 @@ $shadows-big: multiple-box-shadow(50);
   }
 }
 
-.title {
-  top: 10.5%;
-  z-index: 10;
+.siteTitle {
+  top: 20%;
+  z-index: 100;
 
   color: rgb(207, 202, 195);
   text-align: center;
   letter-spacing: 7px;
-}
-
-.mountain_background {
-  height: 100vh;
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
-  background-image: url("../../../assets/home/background_mountains.png");
-}
-
-.painter {
-  height: 103vh;
-
-  background-repeat: no-repeat;
-  background-size: cover;
-  // background-position: center;
-  background-position: 60%;
-  background-image: url("../../../assets/home/painter.png");
-}
-
-.mountain_foreground {
-  height: 100vh;
-
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
-  background-image: url("../../../assets/home/foreground_mountains.png");
-}
-
-.subtitle {
-  font-variant: small-caps;
+  .subtitle {
+    font-variant: small-caps;
+  }
 }
 
 @media (min-width: 768px) {
-  .title {
+  .siteTitle {
     right: 8%;
-    top: 6%;
+    top: 30%;
     text-align: right;
   }
 

@@ -90,5 +90,9 @@
   .arrow-wrapper {
     position: absolute;
     margin-left: 20px;
+    transition: rotate 0.2s;
+    &.active {
+      rotate: 90deg;
+    }
   }
 }

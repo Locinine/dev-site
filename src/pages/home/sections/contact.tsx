@@ -32,7 +32,7 @@ const Contact = () => {
   return (
     <div id="contact" className="contact_container">
       <Row gutter={[16, 16]}>
-        <Col span={16} offset={7}>
+        <Col span={24}>
           <Title level={1}>Get in touch!</Title>
           <Form
             layout="vertical"

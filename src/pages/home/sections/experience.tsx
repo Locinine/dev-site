@@ -23,7 +23,7 @@ const Experience = () => {
         </Paragraph>
       ),
       footer: tech ? (
-        <Col span={22} offset={1}>
+        <Col span={23} offset={1}>
           <Flex gap="4px 0" wrap>
             {tech?.split(",").map((test) => (
               <Tag color="#742759" style={{ borderRadius: "10px" }}>
@@ -38,9 +38,7 @@ const Experience = () => {
 
   return (
     <div id="experience" className="expierence_container">
-      <Col span={14} offset={7}>
-        <Accordion items={experiences} />
-      </Col>
+      <Accordion openPanel={0} items={experiences} />
     </div>
   );
 };

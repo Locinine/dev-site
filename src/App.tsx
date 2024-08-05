@@ -4,7 +4,6 @@ import { Route, Switch } from "wouter";
 import { ConfigProvider } from "antd";
 import { themeOverides } from "./theme";
 
-import Navigation from "./components/navbar/navbar";
 import Home from "./pages/home/home";
 import CV from "./pages/cv/cv";
 // import Projects from "./containers/projects";
@@ -32,7 +31,6 @@ const App: React.FC = () => {
   return (
     <ConfigProvider theme={themeOverides}>
       <ParallaxProvider>
-        <Navigation title="Farrah Lord-Newcombe" />
         <Switch>
           <Route path={"/"} component={Home} />
           <Route path="/cv">

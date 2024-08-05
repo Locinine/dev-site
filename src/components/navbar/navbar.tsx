@@ -1,66 +1,52 @@
 import React, { useState } from "react";
 import type { MenuProps } from "antd";
-import { Button, Drawer, Flex, Menu } from "antd";
-import { Link, useLocation } from "wouter";
-// import { GrFormClose } from "react-icons/gr";
+import { Button, Drawer, Flex } from "antd";
+import { Link } from "wouter";
+import { FaCodepen, FaDownload, FaGithub, FaLinkedin } from "react-icons/fa";
+import { RxHamburgerMenu } from "react-icons/rx";
+import CVPDF from "../../../public/CV Farrah Lord-Newcombe.pdf";
 
 import styles from "./navbar.module.scss";
-import { RxHamburgerMenu } from "react-icons/rx";
 
-type MenuItem = Required<MenuProps>["items"][number];
+// const { Title } = Typography;
 
-const menuItem: MenuItem[] = [
+type MenuItem = Required<MenuProps>["items"][number] & { url: string };
+
+const menuItem: Array<MenuItem> = [
   {
     key: "home",
-    label: <Link href="/">Home</Link>,
+    url: "/",
+    label: "Home",
+  },
+  {
+    key: "about",
+    url: "/home#about",
+    label: "About",
   },
   {
     key: "expierence",
-    label: <Link href="/expierence">Expierence</Link>,
+    url: "/home#expierence",
+    label: "Expierence",
   },
   {
-    key: "cv",
-    label: <Link href="/cv">CV</Link>,
+    key: "contact",
+    url: "/home#contact",
+    label: "Contact",
   },
+  // {
+  //   key: "cv",
+  //   url: "/cv",
+  //   label: "CV",
+  //   icon: <FaDownload />,
+  // },
 ];
 
 interface NavigationProps {
   title: string;
-  // cvRef: React.RefObject<HTMLDivElement>;
 }
 
-// const Navigation: React.FC<NavigationProps> = ({ title, cvRef }) => {
-
 const Navigation: React.FC<NavigationProps> = ({ title }) => {
-  const [location, setLocation] = useLocation();
   const [navOpen, setNavOpen] = useState<boolean>(false);
-  // const [background, setBackground] = useState<string>("transparent");
-  // const shouldExpand = window.innerWidth >= screenSizes.md;
-
-  const onMenuLinkClick: MenuProps["onClick"] = (e) => {
-    setLocation(e.key);
-  };
-
-  // const onScroll = () => {
-  //   if (window.scrollY > 50) {
-  //     setBackground("dark");
-  //   } else {
-  //     setBackground("transparent");
-  //   }
-  // };
-
-  // useEffect(() => {
-  //   if (location === "/") {
-  //     setBackground("transparent");
-  //     window.addEventListener("scroll", onScroll);
-  //   } else if (background !== "dark") {
-  //     setBackground("dark");
-  //   }
-
-  //   return () => {
-  //     window.removeEventListener("scroll", onScroll);
-  //   };
-  // }, [background, location]);
 
   const MobileNav: JSX.Element = (
     <div className={styles.mobileNav}>
@@ -76,35 +62,64 @@ const Navigation: React.FC<NavigationProps> = ({ title }) => {
         onClose={() => setNavOpen(false)}
         open={navOpen}
       >
-        <div style={{ display: "flex", flexDirection: "column" }}>
-          {menuItem.map(({ key }) => (
-            <Button type="text" href={`/${key}`}>
-              {key.toUpperCase}
-            </Button>
+        <Flex style={{ width: "250px" }} vertical gap="middle" align="flex-end">
+          {menuItem.map(({ key, label, icon, url }) => (
+            <Link href={url} key={key}>
+              <Button icon={icon} type="link">
+                {label}
+              </Button>
+            </Link>
           ))}
-        </div>
+          <Button
+            href={CVPDF}
+            download="CV:Farrah-Lord-Newcombe"
+            target="_blank"
+            rel="noreferrer"
+            type="default"
+            icon={<FaDownload />}
+            size="large"
+          >
+            CV
+          </Button>
+        </Flex>
+        <Flex
+          gap={15}
+          justify="flex-end"
+          style={{ width: "250px", marginTop: "40px" }}
+        >
+          <Button
+            type="primary"
+            icon={<FaLinkedin />}
+            size="large"
+            href="https://www.linkedin.com/in/farrah-lord-newcombe-00262b92/"
+            target="_blank"
+          />
+          <Button type="primary" icon={<FaGithub />} size="large" />
+          <Button type="primary" icon={<FaCodepen />} size="large" />
+        </Flex>
       </Drawer>
     </div>
   );
 
   const DesktopNav: JSX.Element = (
-    <div className={styles.desktopNav}>
-      <div className={styles.siteName}>
-        <h4>{title}</h4>
-      </div>
-      <Menu
-        overflowedIndicator={<RxHamburgerMenu />}
-        className={styles.links}
-        onClick={onMenuLinkClick}
-        selectedKeys={[location]}
-        mode="horizontal"
-        items={menuItem}
-      />
-    </div>
+    <Flex justify="flex-end" align="center" className={styles.desktopNav}>
+      {/* <Title level={4}>{title}</Title> */}
+      <Button
+        href={CVPDF}
+        download="CV:Farrah-Lord-Newcombe"
+        target="_blank"
+        rel="noreferrer"
+        type="default"
+        icon={<FaDownload />}
+        size="large"
+      >
+        CV
+      </Button>
+    </Flex>
   );
 
   return (
-    <Flex align="center" gap={20} className={styles.menu}>
+    <Flex className={styles.menu}>
       {MobileNav}
       {DesktopNav}
     </Flex>

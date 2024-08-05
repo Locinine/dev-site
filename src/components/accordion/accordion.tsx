@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { SlArrowDown, SlArrowRight } from "react-icons/sl";
+import { SlArrowRight } from "react-icons/sl";
 
 import "./accordion.scss";
 
@@ -27,8 +27,12 @@ const Accordion: React.FC<AccordionProps> = ({ items, openPanel }) => {
           setActivePanel(activePanel !== index ? index : undefined)
         }
       >
-        <div className="arrow-wrapper">
-          {index === activePanel ? <SlArrowDown /> : <SlArrowRight />}
+        <div
+          className={`arrow-wrapper ${
+            index === activePanel ? "active" : undefined
+          }`}
+        >
+          <SlArrowRight />
         </div>
         <span className="title-text">{label}</span>
       </div>

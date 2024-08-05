@@ -1,0 +1,14 @@
+.home_container {
+  position: "relative";
+  height: 100vh;
+  width: 100%;
+  .gradient_out {
+    background: #22052c;
+    background: linear-gradient(
+      0deg,
+      rgba(4, 1, 21, 1) 0%,
+      rgba(34, 5, 44, 1) 10%,
+      rgba(34, 5, 44, 1) 100%
+    );
+  }
+}

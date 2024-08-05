@@ -1,8 +1,8 @@
 .anchor_container {
   display: block;
-  position: absolute;
+  position: fixed;
   bottom: 100px;
-  left: 100px;
+  margin-left: 100px;
   z-index: 2;
 }
 
