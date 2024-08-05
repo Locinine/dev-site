@@ -1,0 +1,94 @@
+@import url(https://fonts.googleapis.com/css?family=Quicksand:300,400,700);
+
+.accordion {
+  z-index: 2000;
+  width: 100%;
+  background-color: transparent;
+  margin: auto;
+  margin-top: 30px;
+
+  .title,
+  .footer {
+    min-height: 30px;
+    width: 100%;
+    color: #ffddcc;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    text-align: left;
+    line-height: 2;
+    font-weight: lighter;
+    padding: 10px;
+    transition: all 0.2s ease-in;
+  }
+
+  .title {
+    margin-top: 10px;
+    border-radius: 4px 4px 0 0;
+  }
+
+  .footer {
+    border-radius: 0 0 4px 4px;
+  }
+
+  .title-text {
+    margin-left: 50px;
+  }
+
+  .title:hover,
+  .title:hover ~ .footer,
+  .footer:hover ~ .title {
+    cursor: pointer;
+    background-color: rgba(194, 194, 194, 0.1);
+  }
+
+  .title:active {
+    background-color: rgba(0, 0, 0, 0.55);
+  }
+
+  .content {
+    height: 30px;
+    width: calc(100% + 20px);
+    background-color: transparent;
+    border-radius: 4px;
+    color: white;
+    font-size: 14px;
+    text-align: center;
+    position: relative;
+    z-index: 1000;
+    margin-top: -30px;
+    text-align: left;
+    transition: all 200ms cubic-bezier(0.6, -0.28, 0.735, 0.045);
+    white-space: pre-wrap;
+  }
+
+  .content-open {
+    margin-top: 0px;
+    height: auto;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 4px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(2.2px);
+    -webkit-backdrop-filter: blur(2.2px);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    transition: all 350ms cubic-bezier(0.08, 1.09, 0.32, 1.275);
+  }
+
+  .content-text {
+    padding: 15px;
+    visibility: hidden;
+    opacity: 0;
+    overflow: auto;
+    transition: all 0.2s ease-in;
+  }
+
+  .content-text-open {
+    visibility: visible;
+    opacity: 1;
+    transition: all 0.8s ease-in;
+  }
+
+  .arrow-wrapper {
+    position: absolute;
+    margin-left: 20px;
+  }
+}

@@ -1,0 +1,55 @@
+import { useState } from "react";
+import { SlArrowDown, SlArrowRight } from "react-icons/sl";
+
+import "./accordion.scss";
+
+export interface AccordionItem {
+  label: string | JSX.Element;
+  content: string | JSX.Element;
+  footer?: JSX.Element;
+}
+
+interface AccordionProps {
+  items: Array<AccordionItem>;
+  size?: "xs " | "sm" | "md" | "lg";
+  openPanel?: number;
+  expandAll?: boolean;
+}
+
+const Accordion: React.FC<AccordionProps> = ({ items, openPanel }) => {
+  const [activePanel, setActivePanel] = useState<number | undefined>(openPanel);
+
+  const sections = items.map(({ label, content, footer }, index) => (
+    <div key={index}>
+      <div
+        className="title"
+        onClick={() =>
+          setActivePanel(activePanel !== index ? index : undefined)
+        }
+      >
+        <div className="arrow-wrapper">
+          {index === activePanel ? <SlArrowDown /> : <SlArrowRight />}
+        </div>
+        <span className="title-text">{label}</span>
+      </div>
+      <div
+        className={`${
+          index === activePanel ? "content-open" : undefined
+        } content`}
+      >
+        <div
+          className={`${
+            index === activePanel ? "content-text-open" : undefined
+          } content-text`}
+        >
+          {content}
+        </div>
+      </div>
+      {footer && <div className="footer">{footer}</div>}
+    </div>
+  ));
+
+  return <div className="accordion">{sections}</div>;
+};
+
+export default Accordion;

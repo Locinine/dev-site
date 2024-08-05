@@ -1,0 +1,13 @@
+.anchor_container {
+  display: block;
+  position: absolute;
+  bottom: 100px;
+  left: 100px;
+  z-index: 2;
+}
+
+@media (max-width: 767px) {
+  .anchor_container {
+    display: none;
+  }
+}
