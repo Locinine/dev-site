@@ -1,7 +1,7 @@
 import { BannerLayer, ParallaxBanner } from "react-scroll-parallax";
 import { Button } from "antd";
 
-import painterPNG from "/public/painter.png?raw";
+import painterPNG from "/public/painter.png";
 
 import "./styles/banner.scss";
 
