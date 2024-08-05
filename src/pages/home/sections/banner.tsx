@@ -1,6 +1,7 @@
 import { BannerLayer, ParallaxBanner } from "react-scroll-parallax";
 import { Button } from "antd";
 
+import skyJPG from "/public/sky.jpg";
 import painterPNG from "/public/painter.png";
 import backgroundMountainsPNG from "/public/background_mountains.png";
 import foregroundMountainsPNG from "/public/foreground_mountains.png";
@@ -8,7 +9,7 @@ import foregroundMountainsPNG from "/public/foreground_mountains.png";
 import "./styles/banner.scss";
 
 const stars: BannerLayer = {
-  image: "/public/sky.jpg",
+  image: skyJPG,
   translateY: [0, 20],
   opacity: [1, 0.3],
   scale: [1.05, 1, "easeOutCubic"],
