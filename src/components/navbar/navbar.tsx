@@ -10,7 +10,10 @@ import styles from "./navbar.module.scss";
 
 // const { Title } = Typography;
 
-type MenuItem = Required<MenuProps>["items"][number] & { url: string };
+type MenuItem = Required<MenuProps>["items"][number] & {
+  url: string;
+  label: string;
+};
 
 const menuItem: Array<MenuItem> = [
   {
@@ -63,11 +66,9 @@ const Navigation: React.FC<NavigationProps> = ({ title }) => {
         open={navOpen}
       >
         <Flex style={{ width: "250px" }} vertical gap="middle" align="flex-end">
-          {menuItem.map(({ key, label, icon, url }) => (
+          {menuItem.map(({ key, label, url }) => (
             <Link href={url} key={key}>
-              <Button icon={icon} type="link">
-                {label}
-              </Button>
+              <Button type="link">{label}</Button>
             </Link>
           ))}
           <Button

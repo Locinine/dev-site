@@ -1,4 +1,4 @@
-import { Col, Divider, Typography } from "antd";
+import { Divider, Typography } from "antd";
 
 import "./styles/about.scss";
 

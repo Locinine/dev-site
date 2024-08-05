@@ -43,7 +43,7 @@ const Menu: React.FC = () => (
         target="_blank"
         size="large"
       />
-      {/* <Button type="default" icon={<FaCodepen />} size="large" /> */}
+      <Button type="default" icon={<FaCodepen />} size="large" />
     </Flex>
   </Col>
 );
