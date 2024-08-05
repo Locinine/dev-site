@@ -1,3 +1,0 @@
-# Coming Soon...
-
-I swear I will update this
