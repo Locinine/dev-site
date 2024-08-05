@@ -1,13 +1,15 @@
 {
   "name": "personal-website",
   "private": true,
+  "homepage": "https://www.farrah.dev",
   "version": "0.0.0",
   "type": "module",
   "scripts": {
     "dev": "vite",
     "build": "tsc -b && vite build",
     "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
-    "preview": "vite preview --port 8080"
+    "preview": "vite preview --port 8080",
+    "deploy": "gh-pages -d build"
   },
   "dependencies": {
     "antd": "^5.20.0",
