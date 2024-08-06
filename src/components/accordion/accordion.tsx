@@ -17,7 +17,6 @@ interface AccordionProps {
 }
 
 const Accordion: React.FC<AccordionProps> = ({ items, openPanel }) => {
-  console.log("openPanel: ", openPanel);
   const [activePanel, setActivePanel] = useState<number | undefined>(openPanel);
 
   const sections = items.map(({ label, content, footer }, index) => (

@@ -22,8 +22,11 @@
       }
     }
 
-    .skill_tag {
-      border-radius: 10px;
+    .skills {
+      margin-bottom: 10px;
+      .skill_tag {
+        border-radius: 10px;
+      }
     }
   }
 }

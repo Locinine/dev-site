@@ -31,11 +31,8 @@ const Experience = () => {
       ),
       content: (
         <>
-          <Paragraph>
-            <div dangerouslySetInnerHTML={{ __html: description }} />
-          </Paragraph>
           {screens.xs && (
-            <Flex gap="4px 0" wrap>
+            <Flex gap="4px 0" wrap className="skills">
               {skills?.split(",").map((skill) => (
                 <Tag key={skill} color="#742759" className="skill_tag">
                   {skill}
@@ -43,6 +40,9 @@ const Experience = () => {
               ))}
             </Flex>
           )}
+          <Paragraph>
+            <div dangerouslySetInnerHTML={{ __html: description }} />
+          </Paragraph>
         </>
       ),
       footer:
