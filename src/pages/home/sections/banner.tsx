@@ -1,15 +1,15 @@
 import { BannerLayer, ParallaxBanner } from "react-scroll-parallax";
-import { Button, Grid } from "antd";
+import { Breakpoint, Button } from "antd";
 
-import skyJPG from "/public/banner/sky.jpg";
-import backgroundMountainsPNG from "/public/banner/background_mountains.png";
-import painterJPG from "/public/banner/painter.png";
-import foregroundMountainsPNG from "/public/banner/foreground_mountains.png";
+import skyJPG from "/banner/sky.jpg";
+import backgroundMountainsPNG from "/banner/background_mountains.png";
+import painterJPG from "/banner/painter.png";
+import foregroundMountainsPNG from "/banner/foreground_mountains.png";
 
-import skyJPGXs from "/public/banner_xs/sky.jpg";
-import backgroundMountainsPNGXs from "/public/banner_xs/background_mountains.png";
-import painterJPGXs from "/public/banner_xs/painter.png";
-import foregroundMountainsPNGXs from "/public/banner_xs/foreground_mountains.png";
+import skyJPGXs from "/banner_xs/sky_xs.png";
+import backgroundMountainsPNGXs from "/banner_xs/background_mountains_xs.png";
+import painterJPGXs from "/banner_xs/painter_xs.png";
+import foregroundMountainsPNGXs from "/banner_xs/foreground_mountains_xs.png";
 
 import "./styles/banner.scss";
 import Link from "antd/es/typography/Link";
@@ -43,12 +43,20 @@ const siteTitle: BannerLayer = {
   ),
 };
 
-const HeroBanner = () => {
-  const { useBreakpoint } = Grid;
-  const { xs } = useBreakpoint();
+interface HeroBannerProps {
+  screens: Partial<Record<Breakpoint, boolean>>;
+}
+const HeroBanner = ({ screens }: HeroBannerProps) => {
+  console.log("screens: ", screens);
+
+  if (screens?.xs === undefined) {
+    return <></>;
+  }
+
+  const { xs } = screens;
 
   const stars: BannerLayer = {
-    image: xs ? skyJPG : skyJPGXs,
+    image: xs ? skyJPGXs : skyJPG,
     translateY: [0, 20],
     opacity: [1, 0.3],
     scale: [1.05, 1, "easeOutCubic"],
@@ -63,7 +71,7 @@ const HeroBanner = () => {
   };
 
   const backgroundMountains: BannerLayer = {
-    image: xs ? backgroundMountainsPNG : backgroundMountainsPNGXs,
+    image: xs ? backgroundMountainsPNGXs : backgroundMountainsPNG,
     translateY: [0, 30],
     scale: [1, 1.05, "easeOutCubic"],
     shouldAlwaysCompleteAnimation: true,
@@ -71,14 +79,14 @@ const HeroBanner = () => {
   };
 
   const painter: BannerLayer = {
-    image: xs ? painterJPG : painterJPGXs,
+    image: xs ? painterJPGXs : painterJPG,
     translateY: [0, 10],
     scale: [1, 1.2, "easeOutCubic"],
     shouldAlwaysCompleteAnimation: true,
   };
 
   const foregroundMountains: BannerLayer = {
-    image: xs ? foregroundMountainsPNG : foregroundMountainsPNGXs,
+    image: xs ? foregroundMountainsPNGXs : foregroundMountainsPNG,
     translateY: [0, 15],
     scale: [1, 1.1, "easeOutCubic"],
     shouldAlwaysCompleteAnimation: true,
