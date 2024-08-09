@@ -24,14 +24,45 @@ Migrated applications from Easy-Peasy and Recompose to <b>React Query</b>, <b>re
 
 <b>Collaborated with product and design teams</b> to improve <b>UI/UX</b> and develop new features, advocating for ideas like integrating <b>Code Connect for Figma</b> to streamline workflows.`,
     skills:
-      "React JS, Typescript, React Query, Ant Design, Jest, React Testing Library",
+      "React JS, Typescript, React Query, Ant Design, React Testing Library",
+  },
+  {
+    dates: "Oct 2021 - Dec 2021",
+    role: "Contract Frontend Engineer",
+    company_name: "Bumpstart Technology",
+    description: `Contributed to the development of a bespoke social media website featuring newsfeeds, live streaming, instant messaging, and other functionalities. 
+    
+    Took ownership for ensuring the user interface accurately reflected design specifications, and proactively suggested enhancements to improve user experience.`,
+    skills: "React JS, Typescript, Bootstrap",
+  },
+  {
+    dates: "Nov 2021",
+    role: "Contract Frontend Engineer",
+    company_name: "Carv",
+    description: `Joined on short notice to update a website in preparation for Black Friday, focusing on optimising functionality and enhancing the look and feel.
+    
+    Worked closely with the team lead and UI/UX designers to ensure seamless integration and design coherence.
+    
+    Quickly learned Vue.js from scratch while working on-site, demonstrating adaptability and a commitment to project success.`,
+    skills: "Vue JS",
+  },
+  {
+    dates: "Jul 2021 - Sept 2021",
+    role: "Contract Frontend Engineer",
+    company_name: "Lucid Vision",
+    description: `Worked at a software agency specialising in building web applications for start-ups, with a focus on developing an ESG SaaS tool for data visualisation and reporting.
+    
+    Contributed to the creation of an initial MVP that secured the company's first round of funding.
+    
+    I had to learn typescript as part of this role, demonstrating the ability to adapt and upskill efficiently.`,
+    skills: "React JS, Typescript, Bootstrap",
   },
   {
     dates: "Nov 2020 - Apr 2023",
     role: "Frontend Engineer",
     company_name: "Overwatch Research (Benchling)",
     description:
-      "Migrated react class component to functional component using react hooks.  Involved in direction, implementation and maintenance of product by interpreting scientist feedback and creating solutions. Implemented a new feature, to change how the user interacts with the software. Consuming RESTful APIs and working closely with the backend developers to ensure the best implementation could be achieved. Participation in code reviews to help maintain a clean and performant codebase. Helping with continual development of best practice and code structure. \n\n Benchling acquired Overwatch Research, to help create the industry’s first comprehensive cloud-native in vivo solution.",
+      "Migrated react class component to functional component using react hooks.  Involved in direction, implementation and maintenance of product by interpreting scientist feedback and creating solutions. \n\nImplemented a new feature, to change how the user interacts with the software. Consuming RESTful APIs and working closely with the backend developers to ensure the best implementation could be achieved. Participation in code reviews to help maintain a clean and performant codebase. Helping with continual development of best practice and code structure. \n\n Benchling acquired Overwatch Research, to help create the industry’s first comprehensive cloud-native in vivo solution.",
     skills: "React JS, ES6/ES7, Redux, Git, React Hooks",
   },
   {
@@ -39,7 +70,7 @@ Migrated applications from Easy-Peasy and Recompose to <b>React Query</b>, <b>re
     role: "Full Stack Engineer",
     company_name: "WhiteHat Security",
     description:
-      "Created new features, upgraded and maintained Application Security Testing products (DAST, SAST, AST). Implemented support for Auto API scanning, allowing users to self-service vulnerability scanning. For this I worked closely with other teams to ensure the scanner linked into the product correctly. This was a key feature as it was new to the field and few competitors provided it. Developed Golang based microservices and web services with RESTful APIs and NATs messaging. Participating in code reviews and QA process. Took ownership of activity log updates, learning Perl and working with every team in engineering to complete the work. Worked as scrum master during a rebuild of our architecture, while we migrated from a monolith to micro-frontend, through research and investigation to POC.",
+      "Created new features, upgraded and maintained Application Security Testing products (DAST, SAST, AST). Implemented support for Auto API scanning, allowing users to self-service vulnerability scanning. For this I worked closely with other teams to ensure the scanner linked into the product correctly. This was a key feature as it was new to the field and few competitors provided it. \n\nDeveloped Golang based microservices and web services with RESTful APIs and NATs messaging. Participating in code reviews and QA process. \n\nTook ownership of activity log updates, learning Perl and working with every team in engineering to complete the work. Worked as scrum master during a rebuild of our architecture, while we migrated from a monolith to micro-frontend, through research and investigation to POC.",
     skills: "React JS, Redux, Redux Form, Go, Git, Docker, Kubernetes",
   },
   {
@@ -47,7 +78,7 @@ Migrated applications from Easy-Peasy and Recompose to <b>React Query</b>, <b>re
     role: "Sharepoint Developer",
     company_name: "Telefonica (O2 UK)",
     description:
-      "Maintained and developed a host of applications, ranging from a legacy classic ASP knowledgebase to modern SharePoint TeamSite's which utilised AngularJS, ThreeJS (webGL) and Material Design. Worked with Workplace by Facebook to develop bots using NodeJS and graph API. Most notably a survey bot questioning approximately 3,000 audience members at O2’s annual conference and providing real time statistics to the exec team in a custom site. Lead the intranet migration from Sharepoint 2010 to 2013, integrating Angular MaterialJS working towards a mobile first approach. Standardised creation of microsites within the business to ensure consistency and reduce setup overhead. I mentored and trained new developers that joined my team in the frontend.",
+      "Maintained and developed a host of applications, ranging from a legacy classic ASP knowledgebase to modern SharePoint TeamSite's which utilised AngularJS, ThreeJS (webGL) and Material Design. \n\nWorked with Workplace by Facebook to develop bots using NodeJS and graph API. Most notably a survey bot questioning approximately 3,000 audience members at O2’s annual conference and providing real time statistics to the exec team in a custom site. \n\nLead the intranet migration from Sharepoint 2010 to 2013, integrating Angular MaterialJS working towards a mobile first approach. Standardised creation of microsites within the business to ensure consistency and reduce setup overhead. I mentored and trained new developers that joined my team in the frontend.",
     skills:
       "Angular Material JS, Sharepoint 2010/13, Material Design, JQuery, CSS",
   },
@@ -56,7 +87,7 @@ Migrated applications from Easy-Peasy and Recompose to <b>React Query</b>, <b>re
     role: "Higher Apprentice",
     company_name: "Telefonica (O2 UK)",
     description:
-      "The apprenticeship scheme consisted of rotational placements spanning three years inside operations, while working towards a foundation degree. During this time I supported a collection of devices; Cisco switches, Checkpoint firewalls and Unix kit. Managed Checkpoint firewall rulebases, resolved connectivity issues and co-led a system migration project. Monitored the packet core, switch and IP networks, fixed faults, logged cases, escalated them and participated in the operational readiness testing of new devices.",
+      "The apprenticeship scheme consisted of rotational placements spanning three years inside operations, while working towards a foundation degree. \n\nDuring this time I supported a collection of devices; Cisco switches, Checkpoint firewalls and Unix kit. Managed Checkpoint firewall rulebases, resolved connectivity issues and co-led a system migration project. Monitored the packet core, switch and IP networks, fixed faults, logged cases, escalated them and participated in the operational readiness testing of new devices.",
     skills: null,
   },
 ];
