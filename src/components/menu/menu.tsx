@@ -1,6 +1,6 @@
 import React from "react";
 import { Anchor, Button, Col, Flex, Typography } from "antd";
-import { FaLinkedin, FaGithub, FaCodepen } from "react-icons/fa";
+import { FaLinkedin, FaGithub } from "react-icons/fa";
 
 import "./menu.scss";
 
@@ -44,7 +44,7 @@ const Menu: React.FC = () => (
         target="_blank"
         size="large"
       />
-      <Button type="default" icon={<FaCodepen />} size="large" />
+      {/* <Button type="default" icon={<FaCodepen />} size="large" /> */}
     </Flex>
   </Col>
 );

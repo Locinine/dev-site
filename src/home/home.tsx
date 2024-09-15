@@ -1,6 +1,6 @@
 import { Col, Grid, Row } from "antd";
-import Navigation from "../../components/navbar/navbar";
-import Menu from "../../components/menu/menu";
+import Navigation from "../components/navbar/navbar";
+import Menu from "../components/menu/menu";
 import Experience from "./sections/experience";
 import About from "./sections/about";
 import Contact from "./sections/contact";

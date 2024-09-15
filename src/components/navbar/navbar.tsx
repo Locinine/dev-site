@@ -4,7 +4,7 @@ import { Button, Drawer, Flex } from "antd";
 import { Link } from "wouter";
 import { FaCodepen, FaDownload, FaGithub, FaLinkedin } from "react-icons/fa";
 import { RxHamburgerMenu } from "react-icons/rx";
-import CVPDF from "../../../public/CV Farrah Lord-Newcombe.pdf";
+import CVPDF from "../../../public/Farrah_Lord_Newcombe_CV_24.pdf";
 
 import styles from "./navbar.module.scss";
 
