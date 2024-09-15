@@ -7,42 +7,72 @@ import {
   Input,
   Typography,
   ConfigProvider,
+  message,
 } from "antd";
 import type { FormProps } from "antd";
+import emailjs from "@emailjs/browser";
 
 import "./styles/contact.scss";
-import { formTheme } from "../../../theme";
+import { formTheme } from "../../theme";
+import { NoticeType } from "antd/es/message/interface";
 
 const { TextArea } = Input;
 const { Title } = Typography;
 
-// const { Text, Title } = Typography;
 type FieldType = {
-  type?: string;
-  name?: string;
-  email?: string;
-  message?: string;
+  type: string;
+  name: string;
+  email: string;
+  message: React.ChangeEvent<HTMLTextAreaElement>;
 };
 
 const Contact = () => {
-  const onSubmit: FormProps<FieldType>["onFinish"] = (values) => {
-    console.log("Success:", values);
-  };
+  const [messageApi, contextHolder] = message.useMessage();
 
-  const onSubmitFailed: FormProps<FieldType>["onFinishFailed"] = (
-    errorInfo
-  ) => {
-    console.log("Failed:", errorInfo);
-  };
+  const onSubmit: FormProps<FieldType>["onFinish"] = async ({
+    type,
+    name,
+    email,
+    message,
+  }) => {
+    const showMessage = (
+      type: NoticeType,
+      content: string,
+      duration?: number
+    ) =>
+      messageApi.open({
+        type,
+        content,
+        ...(duration ? { duration } : {}),
+        key: "sendingEmail",
+        style: {
+          color: "#000000",
+        },
+      });
 
-  const onEnquiryChange = (value: string) => {
-    console.log(`selected ${value}`);
+    showMessage("loading", "Sending message...", 0);
+
+    try {
+      const { status } = await emailjs.send(
+        import.meta.env.VITE_SERVICE_ID,
+        import.meta.env.VITE_TEMPLATE_ID,
+        { type, name, email, message: message.target?.value },
+        import.meta.env.VITE_PUBLIC_KEY
+      );
+
+      if (status === 200) {
+        showMessage("success", "Your message was sent successfully");
+      }
+    } catch (err) {
+      showMessage("error", "Error sending message, try again!");
+    }
   };
 
   return (
     <div id="contact" className="contact_container">
       <Row gutter={[16, 16]}>
         <Col span={24}>
+          {contextHolder}
           <Title level={1}>Get in touch!</Title>
           <ConfigProvider theme={formTheme}>
             <Form
@@ -51,7 +81,6 @@ const Contact = () => {
               labelCol={{ span: 4 }}
               wrapperCol={{ span: 20 }}
               onFinish={onSubmit}
-              onFinishFailed={onSubmitFailed}
               autoComplete="off"
             >
               <Form.Item<FieldType>
@@ -63,7 +92,6 @@ const Contact = () => {
               >
                 <Select
                   placeholder="What is your message about"
-                  onChange={onEnquiryChange}
                   options={[
                     {
                       value: "general",
@@ -110,6 +138,12 @@ const Contact = () => {
                 name="message"
                 valuePropName="message"
                 wrapperCol={{ offset: 0, span: 20 }}
+                rules={[
+                  {
+                    required: true,
+                    message: "Please provide the message you wish to send",
+                  },
+                ]}
               >
                 <TextArea rows={6} placeholder="What's on your mind?" />
               </Form.Item>

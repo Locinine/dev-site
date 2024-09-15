@@ -1,6 +1,6 @@
-import { Col, Row } from "antd";
-import Navigation from "../../components/navbar/navbar";
-import Menu from "../../components/menu/menu";
+import { Col, Grid, Row } from "antd";
+import Navigation from "../components/navbar/navbar";
+import Menu from "../components/menu/menu";
 import Experience from "./sections/experience";
 import About from "./sections/about";
 import Contact from "./sections/contact";
@@ -9,11 +9,14 @@ import HeroBanner from "./sections/banner";
 import "./home.scss";
 
 const Home = () => {
+  const { useBreakpoint } = Grid;
+  const screens = useBreakpoint();
+
   return (
     <div className="home_container">
       <Navigation title="Farrah Lord-Newcombe" />
       <Menu />
-      <HeroBanner />
+      <HeroBanner screens={screens} />
       <div className="gradient_out">
         <Col
           xs={{ span: 20, offset: 2 }}
